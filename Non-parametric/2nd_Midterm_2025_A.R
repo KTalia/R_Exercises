@@ -3,9 +3,9 @@
 
 alpha <- 0.01
 
-p0 <- dpois(0, lambda = 2)
-p1 <- dpois(1, lambda = 2)
-p2 <- ppois(2,lambda=2, lower.tail=FALSE) + dpois(2,lambda = 2)
+p0 <- dpois(0, lambda = 2) # P[X = 0] when X~Poisson(2)
+p1 <- dpois(1, lambda = 2) # P[X = 1] when X~Poisson(2)
+p2 <- ppois(2,lambda=2, lower.tail=FALSE) + dpois(2,lambda = 2) # P[X == 2] and P[X >= 2] 
 
 probs <- c(p0,p1,p2)
 probs
