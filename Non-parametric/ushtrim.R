@@ -1,15 +1,18 @@
-# Exponential distribution
+freqs <- c(41, 19, 16, 13, 11)
 
-x <- rexp(100, rate = 0.025)
+lambda <- 1/40
 
-# Theoretical probabilities
-pexp(20, rate = 0.025) # X <= 20 or X < 20
-1 - pexp(20, rate = 0.025) # X >= 20 or X > 20
+p1 <-pexp(20,lambda)
+p2 <- pexp(40,lambda) - pexp(20,lambda)
+p3 <- pexp(60,lambda) - pexp(40, lambda)
+p4 <- pexp(90,lambda) - pexp(60, lambda)
+p5 <- 1 - pexp(90,lambda)
 
-# Empirical probabilities
-length(x[x<=20])/length(x) # X <= 20 or X < 20
-length(x[x>=20])/length(x) # X >= 20 or X > 20
+probs <- c(p1,p2,p3,p4,p5)
 
+result <- chisq.test(freqs, p = probs)
+result
 
-# Interval 15 <= X <= 20
-pexp(20,rate=0.025) - pexp(15, rate = 0.025)
+alpha<result$p.value
+
+qchisq(1-0.05,4)

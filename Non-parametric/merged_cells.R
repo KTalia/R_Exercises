@@ -16,17 +16,14 @@ p4<-1-(p1+p2+p3)
 prob<-c(p1,p2,p3,p4)
 
 result<-chisq.test(freq,p=prob)
-
-
+# pgeom(1, lower.tail = FALSE) == P[X > 1]
+# dgeom(1) == P[X == 1]
+# So their sum == P[X == 1 or greater] == P[X >= 1]
 
 #spojuvanje klasi
 
 pp1<-p1
-pp2<-pgeom(1,0.8,lower.tail = FALSE)+dgeom(1,0.8) # P{X>=2}
-
-# pgeom(1, lower.tail = FALSE) == P[X > 1]
-# dgeom(1) == P[X == 1]
-# So their sum == P[X == 1 or greater] == P[X >= 1]
+pp2<-pgeom(1,0.8,lower.tail = FALSE) + dgeom(1,0.8) # P{X>=2}
 
 n1=50
 n2=50
