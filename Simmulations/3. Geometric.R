@@ -21,3 +21,9 @@ pgeom(4, 0.3) # X <  5
 
 # Empirical probabilites
 length(x[x==5])/length(x)   # X == 5
+
+# Intervals
+
+pgeom(5, 0.3) - pgeom(2, 0.3) # 3 <= X <= 5
+pgeom(5, 0.3) - pgeom(3, 0.3) # 3 < X <= 5
+pgeom(4, 0.3) - pgeom(2, 0.3) # 3 <= X < 5

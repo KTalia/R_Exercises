@@ -1,13 +1,19 @@
-# Simulating
-x_norm <- rnorm(n = 100, mean = 30, sd = 5)
+# Normal Distribution
 
-# Theoretical probability (P[X <= 20]) 
-theoretical.normal <- pnorm(20, mean = 30, sd = 5)
+x <- rnorm(100, mean =30, sd = 2)
 
-# X >=20
-gr_eq_20 <- 1- pnorm(20, mean = 30, sd = 5) 
+# For a continuous normal distribution,
+# P(X≥20) is the same as 𝑃(𝑋>20)
 
+# Theoretical probabilities
+pnorm(20,30,2) # X <= 20 or X < 20
+1- pnorm(20,30,2) # X >= 20 or X > 20
 
-# Empirical probability
-empirical.normal <- mean(x_norm <= 20)
-empirical.normal <- length(x_norm[x_norm <= 210])/length(x_norm)
+# Empirical Probabilities
+
+length(x[x<=20])/length(x) # X <= 20 or X < 20
+
+length(x[x>=20])/length(x) # X >= 20 or X > 20
+
+# Approximating P(19 < X < 20)
+p_interval <- pnorm(20, mean, sd) - pnorm(19, mean, sd)

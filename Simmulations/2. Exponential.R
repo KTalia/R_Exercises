@@ -1,8 +1,15 @@
-# Simulating
-x_exp <- rexp(n = 100, rate = 0.025) # Mean = 1/rate = 40
+# Exponential distribution
 
-# Theoretical probability (P[X <= 20]) 
-theoretical.exp <- pexp(20, rate = 0.025)
+x <- rexp(100, rate = 0.025)
 
-# Empirical probability
-empirical.exp <- mean(x_exp <= 20)
+# Theoretical probabilities
+pexp(20, rate = 0.025) # X <= 20 or X < 20
+1 - pexp(20, rate = 0.025) # X >= 20 or X > 20
+
+# Empirical probabilities
+length(x[x<=20])/length(x) # X <= 20 or X < 20
+length(x[x>=20])/length(x) # X >= 20 or X > 20
+
+
+# Interval 15 <= X <= 20
+pexp(20,rate=0.025) - pexp(15, rate = 0.025)
