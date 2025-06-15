@@ -1,27 +1,20 @@
 # Simmulate R
 x <- rpois(100,30)
 
-# Theoretical probability of X<=20
-theoretical.prob <-  ppois(20, lambda = 30)
-theoretical.prob
+# Theoretical probabilities
+theoretical.prob <-  ppois(20, lambda = 30) # X<=20
+theoretical.equal20 <- dpois(20, lambda = 30) # X = 20
+theoretical.geq20 <- 1 - ppois(19, lambda = 30) # X >= 20
+theoretical.prob <- 1 - ppois(20, lambda = 30) # X > 20 --> 1 - P(X<=20)
+l_20 <- ppois(19, lambda = 30) # X < 20
 
-#Theoretical probability of X=20
-theoretical.equal20 <- dpois(20, lambda = 30)
-theoretical.equal20
+# Empirical probabilities
+empirical.prob <- length(x[x <= 20]) / length(x) # X<=20
+empirical.prob <- length(x[x >= 20]) / length(x) # X >= 20
+empirical.prob <- length(x[x == 20]) / length(x) # X == 20
+empirical.prob <- length(x[x > 20]) / length(x) # X > 20
+empirical.prob <- length(x[x < 20]) / length(x) # X < 20
 
-# Theoretical probability of X >=20
-theoretical.geq20 <- 1 - ppois(20, lambda = 30)
-theoretical.geq20
-
-# give me all the elements in x that are less than or equal to 20.
-# <=
-empirical.prob <- length(x[x <= 20]) / length(x)
-empirical.prob
-
-
-# Empirical probability for X >= 20
-empirical.prob <- length(x[x >= 20]) / length(x)
-empirical.prob
 
 # Quartiles
 quartiles
