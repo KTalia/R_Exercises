@@ -1,17 +1,18 @@
-# Binomial distribution
+# Normal Distribution
 
-x <- rbinom(100, size = 1000, prob = 0.2)
+x <- rnorm(100, mean =30, sd = 2)
+
 
 # Theoretical probabilities
-dbinom(210,1000,0.2)     # X = 210
-pbinom(210,1000,0.2)     # X <=210
-1- pbinom(209,1000,0.2)  # X >= 210
-pbinom(209, 1000, 0.2)   # X < 210
-1 - pbinom(210,1000,0.2) # X > 210
+dnorm(20,30,2) # X == 20
+pnorm(20,30,2) # X <= 20
+1- pnorm(19,30,2) # X >= 20
+pnorm(19,30,2) # X < 20
+1 - pnorm(20,30,2) # X > 20
 
-# Empirical
-length(x[x==210])/length(x) # X = 210
-length(x[x >210])/length(x) # X > 210
-length(x[x<210])/length(x)  # X < 210
-length(x[x>=210])/length(x) # X >= 210
-length(x[x<=210])/length(x) # X <= 210
+# Empirical Probabilities
+# X == 20
+# X <= 20
+# X >= 20
+# X < 20
+# X > 20
