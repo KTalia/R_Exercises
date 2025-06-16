@@ -9,7 +9,7 @@ p1 <-pexp(20,lambda)
 p2 <- pexp(40,lambda) - pexp(20,lambda)
 p3 <- pexp(60,lambda) - pexp(40, lambda)
 p4 <- pexp(90,lambda) - pexp(60, lambda)
-p5 <- 1 - pexp(90,lambda)
+p5 <- 1 - pexp(90,lambda) # [60,90)
 
 probs <- c(p1,p2,p3,p4,p5)
 

@@ -38,8 +38,8 @@ qf(alpha,n-1,m-1) # 0.3305269
 
 
 result <- var.test(x, y,
-         alternative = "greater",
-         conf.level = 0.95)
+                   alternative = "greater",
+                   conf.level = 0.95)
 
 alpha < result$p.value
 
@@ -54,9 +54,9 @@ qt(1-alpha/2, n+m-2)
 
 
 result <- t.test(x, y,
-       alternative = "two.sided",
-        var.equal = TRUE,
-       conf.level = 0.95)
+                 alternative = "two.sided",
+                 var.equal = TRUE,
+                 conf.level = 0.95)
 
 
 alpha < result$p.value
